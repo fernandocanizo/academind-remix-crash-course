@@ -2,7 +2,6 @@ import type { LinksFunction } from "@remix-run/node";
 
 import { cssBundleHref } from "@remix-run/css-bundle";
 import mainCss from "~/styles/main.css";
-import homeCss from "~/styles/home.css";
 
 import {
   Links,
@@ -16,7 +15,6 @@ import {
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   { rel: "stylesheet", href: mainCss },
-  { rel: "stylesheet", href: homeCss },
 ];
 
 export default function App() {
