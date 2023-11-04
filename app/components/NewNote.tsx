@@ -13,7 +13,7 @@ export default function NewNote() {
     <form method="post" id="note-form">
       <p>
         <label htmlFor="title">Title</label>
-        <input type="text"id="title" name="title"required />
+        <input type="text"id="title" name="title" />
       </p>
 
       <p>
