@@ -1,4 +1,4 @@
 export type Note = {
-  title: string;
+  title: string | null;
   content: string;
 }
