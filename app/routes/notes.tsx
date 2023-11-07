@@ -3,6 +3,7 @@ import type { Note } from "~/types/Note";
 
 import invariant from 'tiny-invariant';
 import ShortUniqueId from 'short-unique-id';
+import { redirect } from "@remix-run/node";
 
 import NewNote, { links as NewNoteLinks } from "~/components/NewNote";
 import db from "~/data/db";
@@ -20,12 +21,9 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
   const { noteList } = db.data;
   noteList.push(note);
-  await db.write()
+  await db.write();
 
-  return new Response(null, {
-    status: 200,
-    statusText: "ok",
-  });
+  return redirect("/notes");
 };
 
 export default function Demo() {
